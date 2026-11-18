@@ -6,6 +6,14 @@ SQLiScanner is a Python-based automated vulnerability assessment tool designed t
 
 The tool parses HTML forms, identifies testable input parameters, establishes baseline responses, injects SQL testing payloads, and detects database error signatures.
 
+## Intended Users
+
+SQLiScanner is intended for:
+- Cybersecurity students and ethical hacking learners who want to understand basic SQL injection detection.
+- Educators demonstrating web application security testing in controlled laboratory environments.
+- Junior penetration testers conducting authorised security assessments.
+- Web developers interested in identifying potential SQL injection vulnerabilities in their applications.
+
 ## Team Members
 
 This project was collaboratively developed by four students from UniKL MIIT as part of the IKB31603 Ethical Hacking Assignment 1.
@@ -152,9 +160,18 @@ python main.py --cookie "PHPSESSID=your_session_id; security=low"
 
 ## Ethical Considerations & Responsible Disclosure
 
-This tool is developed strictly for academic learning and defensive vulnerability assessment. Testing must only be performed on systems where explicit authorisation has been granted.
+SQLiScanner is developed strictly for academic learning and defensive vulnerability assessment. Several safeguards are implemented to encourage responsible usage:
 
-If a vulnerability is discovered during authorised testing, it must be reported privately and responsibly to the system owner with clear remediation advice, such as implementing parameterised queries or prepared statements, rather than exploiting or exfiltrating data.
+- **User Authorization:** Requires users to explicitly confirm that they have permission to test the target system before proceeding.
+- **Target Scope Validation:** Helps prevent testing outside the intended and authorised scope.
+- **Safe Default Target:** Uses localhost as the default target to reduce accidental testing of external systems.
+- **Limited Payloads:** Uses basic SQL syntax-breaking characters to identify potential database error responses without attempting data extraction or destructive exploitation.
+- **Emergency Stop:** Provides a Ctrl+C mechanism to interrupt scanning and preserve partial results when available.
+- **Local Report Storage:** Saves scan results locally in the designated output directory.
+
+If a potential vulnerability is discovered during authorised testing, it should be reported privately to the affected system owner or their designated security contact. The report should include the affected URL, input parameter, detected error evidence and recommended remediation, such as implementing parameterised queries or prepared statements.
+
+Users should avoid accessing, extracting or publicly disclosing sensitive information. Public disclosure should be avoided until the system owner has had a reasonable opportunity to address the vulnerability.
 
 ## Legal Disclaimer
 
@@ -164,12 +181,17 @@ By using this tool, users acknowledge that they are responsible for obtaining pr
 
 ## Limitations
 
-- **Error-Based Detection Only:** Currently detects SQL injection through visible database error messages. It does not support Blind SQL Injection techniques, such as Boolean-based or Time-based detection.
-
-- **Limited Input Coverage:** Targets text and search fields discovered in HTML forms. It does not test HTTP headers, JSON payloads, or standalone URL query parameters.
-
-- **Manual Verification Required:** All flagged findings represent potential vulnerabilities and require manual review to confirm exploitability and reduce false positives.
+- **Error-Based Detection Only:** SQLiScanner focuses on detecting visible database error signatures. It does not currently support Boolean-based, Time-based or UNION-based SQL injection detection.
+- **Limited Input Coverage:** The scanner focuses on supported HTML form input parameters and does not comprehensively test JSON payloads, HTTP headers or standalone URL query parameters.
+- **Authentication Dependency:** Authenticated pages require a valid session cookie. An expired or missing cookie may cause the scanner to access a login page instead of the intended application page.
+- **No Rate Limiting:** The current implementation does not provide a configurable request rate-limiting mechanism.
+- **Authorization Verification:** The scanner requires user confirmation but cannot independently verify whether the user has legitimate permission to test the target.
+- **Manual Verification Required:** Detected findings represent potential vulnerabilities and require manual verification to confirm their validity.
 
 ## Future Improvements
 
-- Implement Boolean-based and Time-based SQL Injection detection.
+- Implement Boolean-based and Time-based SQL injection detection.
+- Expand support for additional HTML input types, JSON payloads and standalone URL parameters.
+- Improve detection accuracy and reduce false positives.
+- Introduce configurable request rate limiting.
+- Enhance authentication handling for different web application environments.
