@@ -6,6 +6,19 @@ SQLiScanner is a Python-based automated vulnerability assessment tool designed t
 
 The tool parses HTML forms, identifies testable input parameters, establishes baseline responses, injects SQL testing payloads, and detects database error signatures.
 
+## Team Members
+
+This project was collaboratively developed by four students from UniKL MIIT as part of the IKB31603 Ethical Hacking Assignment 1.
+
+| No. | Name | Student ID | Contribution |
+|---|---|---|---|
+| 1 | Muhammad Hafeez bin Mohd Radzi | 52215226085 | Scanner testing, validation, documentation and report preparation. |
+| 2 | Nur Najihah Farhanah binti Hashim | 52215125111 | Core scanner development, SQL injection detection logic, payload implementation, integration and overall testing. |
+| 3 | Izzat Ir'fan bin Azman | 52215124710 | HTML form discovery, input parameter identification, testing and documentation. |
+| 4 | Shahril Iskandar bin Sharizan | 52215125627 | Response analysis, vulnerability verification, testing and report preparation. |
+
+All team members contributed to the development, testing, documentation and evaluation of SQLiScanner.
+
 ## Attack Category
 
 - **Vulnerability Class:** SQL Injection (CWE-89: Improper Neutralization of Special Elements used in an SQL Command)
