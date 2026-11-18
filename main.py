@@ -645,6 +645,6 @@ def main():
         print("[!] SQLiScanner has been stopped safely.")
 
 
-
+# execution entry point for the scanner script
 if __name__ == "__main__":
     main()
