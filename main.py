@@ -75,6 +75,7 @@ def user_authorization():
 
 def get_target_url():
     while True:
+        # prompt user for target and fall back to default if blank
         target_url = input(
             f"\nEnter the target URL [default: {default_target}]: "
             ).strip()
@@ -82,6 +83,7 @@ def get_target_url():
         if not target_url:
             target_url = default_target
 
+        # ensure scheme is included so urlsplit parses correctly
         if "://" not in target_url:
             target_url = "http://" + target_url
 
@@ -155,6 +157,7 @@ def safe_request(session, method, url, confirmed_scope, **kwargs):
     current_url = url
     method = method.upper()
 
+    # follow redirects manually to enforce scope checks on every hop
     for redirect_count in range(6):
 
         if not url_in_scope(current_url, confirmed_scope):
@@ -179,6 +182,7 @@ def safe_request(session, method, url, confirmed_scope, **kwargs):
             return response
 
         current_url = urljoin(current_url, redirect_url)
+        # rest of redirect handling 
 
         if response.status_code == 303 and method != "HEAD":
             method = "GET"
@@ -405,12 +409,14 @@ def sqli_scan(session, forms_details, confirmed_scope):
         for form_index, form in enumerate(forms_details, start=1):
             print(f"\n[*] Scanning Form {form_index}...")
 
+            # only target text or search input fields for injection
             parameters = [
                 field["name"]
                 for field in form["inputs"]
                 if field["name"] and field["type"] in ["text", "search"]
             ]
 
+            # get baseline response to compare against error signatures
             baseline = baseline_response(session, form, confirmed_scope)
 
             if baseline is None:
@@ -435,6 +441,7 @@ def sqli_scan(session, forms_details, confirmed_scope):
                     finding = analyze_response(response)
                     response.close()
 
+                    # flag vulnerability if sql error appears and wasn't in baseline
                     if finding and not baseline_finding:
                         dbms, evidence = finding
 
@@ -496,12 +503,14 @@ def sqli_results(results, interrupted=False):
 
 
 def save_report(target_url, forms, results, status="Completed"):
+    # ensure output directory exists locally before writing report
     output_dir = Path("output")
     output_dir.mkdir(exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     report_path = output_dir / f"scan_report_{timestamp}.txt"
 
+    # write structured scan summary and findings to text file
     with open(report_path, "w", encoding="utf-8") as report:
         report.write("=" * 60 + "\n")
         report.write("              SQLi SCANNER REPORT\n")
