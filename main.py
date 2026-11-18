@@ -1,7 +1,6 @@
 import pyfiglet
 import requests
 import argparse
-import time
 from bs4 import BeautifulSoup
 from urllib.parse import urlsplit, urljoin
 from pathlib import Path
@@ -13,8 +12,6 @@ safe_hosts = {
 }
 
 default_target = "http://127.0.0.1"
-
-test_types = ["text", "search", "textarea", "email", "password", "url", "tel"]
 
 sql_error = {
     "MySQL": ["you have an error in your sql syntax", "warning: mysql"],
