@@ -80,7 +80,14 @@ All team members contributed to the development, testing, documentation and eval
 
 ## Usage Examples
 
-### 1. Standard Interactive Scan
+### 1. Display Help Menu
+Displays available commands, options and usage instructions:
+
+```bash
+python main.py -h
+```
+
+### 2. Standard Interactive Scan
 
 Run the scanner and follow the interactive prompts:
 
@@ -88,7 +95,7 @@ Run the scanner and follow the interactive prompts:
 python main.py
 ```
 
-### 2. Dry Run
+### 3. Dry Run
 
 Validates the target URL and scope without sending HTTP requests:
 
@@ -96,15 +103,31 @@ Validates the target URL and scope without sending HTTP requests:
 python main.py --dry-run
 ```
 
-### 3. Authenticated Scan
+### 4. Authenticated Scan
 
-Use the `--cookie` option to access pages that require authentication, such as DVWA:
+SQLiScanner supports authenticated scanning using the `--cookie` option. For testing with DVWA, follow these steps:
+
+1. Open DVWA in your browser and log in.
+2. Navigate to **DVWA Security** and change the security level to **Low**.
+3. Click **Submit** to apply the security setting.
+4. Navigate to the **SQL Injection** page.
+5. Press `F12` to open Developer Tools.
+6. Go to Application tab (Chrome/Edge) or Storage tab (Firefox), select **Cookies** and choose your DVWA website.
+7. Copy the values of `PHPSESSID` and `security` cookies.
+
+Run SQLiScanner using the following command:
 
 ```bash
 python main.py --cookie "PHPSESSID=your_session_id; security=low"
 ```
 
-**Note:** Replace the placeholder with your own valid session cookie. Never share or commit session cookies because they contain authentication credentials.
+**Target URL:** When prompted by SQLiScanner, enter the URL of the DVWA SQL Injection page, for example:
+
+```text
+http://127.0.0.1:8080/vulnerabilities/sqli/
+```
+
+**Note:** Replace the placeholder with your own valid cookie values. Session cookies contain authentication credentials. Never share or commit them to GitHub.
 
 
 ## Demonstration
