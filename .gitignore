@@ -1,10 +1,28 @@
-# Python virtual environment
+# Python virtual environments
 .venv/
 venv/
+ENV/
 
-# Output reports generated during scans
+# Scan reports and generated output
 output/
 
 # Python cache files
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Operating system files
+.DS_Store
+Thumbs.db
