@@ -96,6 +96,17 @@ Validates the target URL and scope without sending HTTP requests:
 python main.py --dry-run
 ```
 
+### 3. Authenticated Scan
+
+Use the `--cookie` option to access pages that require authentication, such as DVWA:
+
+```bash
+python main.py --cookie "PHPSESSID=your_session_id; security=low"
+```
+
+**Note:** Replace the placeholder with your own valid session cookie. Never share or commit session cookies because they contain authentication credentials.
+
+
 ## Demonstration
 
 ### 1. Legal Disclaimer and Authorization
@@ -110,15 +121,6 @@ The following screenshot demonstrates SQLiScanner detecting a potential error-ba
 
 ![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
 
-### 3. Authenticated Scan
-
-Use the `--cookie` option to access pages that require authentication, such as DVWA:
-
-```bash
-python main.py --cookie "PHPSESSID=your_session_id; security=low"
-```
-
-**Note:** Replace the placeholder with your own valid session cookie. Never share or commit session cookies because they contain authentication credentials.
 
 ## Rules of Engagement (RoE)
 
