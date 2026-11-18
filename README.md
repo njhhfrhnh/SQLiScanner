@@ -172,4 +172,4 @@ By using this tool, users acknowledge that they are responsible for obtaining pr
 
 ## Future Improvements
 
-- Implement Boolean-based and Time-based SQL
+- Implement Boolean-based and Time-based SQL Injection detection.
