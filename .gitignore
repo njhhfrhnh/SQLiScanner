@@ -1,0 +1,10 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Output reports generated during scans
+output/
+
+# Python cache files
+__pycache__/
+*.py[cod]
