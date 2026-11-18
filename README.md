@@ -93,6 +93,20 @@ Validates the target URL and scope without sending HTTP requests:
 python main.py --dry-run
 ```
 
+## Demonstration
+
+### 1. Legal Disclaimer and Authorization
+
+SQLiScanner displays a legal disclaimer referencing the Computer Crimes Act 1997 (Act 563), Malaysia, and requires users to confirm their authorization before proceeding.
+
+![Legal Disclaimer](01-legal-disclaimer.png)
+
+### 2. SQL Injection Detection
+
+The following screenshot demonstrates SQLiScanner detecting a potential error-based SQL injection vulnerability in the DVWA testing environment.
+
+![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
+
 ### 3. Authenticated Scan
 
 Passes session cookies to access pages that require authentication, such as DVWA:
