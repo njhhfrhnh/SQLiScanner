@@ -2,17 +2,17 @@
 
 ## Description
 
-SQLiScanner is a Python-based automated vulnerability assessment tool designed to detect potential error-based SQL Injection (SQLi) vulnerabilities in web application forms. It is developed for educational security testing in authorised lab environments, such as DVWA.
+SQLiScanner is a Python-based tool that detects potential error-based SQL Injection (SQLi) vulnerabilities in web application forms. It is designed for educational purposes and authorised testing in lab environments such as DVWA.
 
-The tool parses HTML forms, identifies testable input parameters, establishes baseline responses, injects SQL testing payloads, and detects database error signatures.
+The scanner discovers HTML forms, tests input parameters with SQL injection payloads, and analyses server responses for database error messages.
 
 ## Intended Users
 
 SQLiScanner is intended for:
-- Cybersecurity students and ethical hacking learners who want to understand basic SQL injection detection.
-- Educators demonstrating web application security testing in controlled laboratory environments.
-- Junior penetration testers conducting authorised security assessments.
-- Web developers interested in identifying potential SQL injection vulnerabilities in their applications.
+
+* Cybersecurity students learning SQL injection detection.
+* Educators demonstrating web application security in controlled lab environments.
+* Developers and junior penetration testers conducting authorised security assessments.
 
 ## Team Members
 
@@ -35,15 +35,11 @@ All team members contributed to the development, testing, documentation and eval
 
 ## Attack Lifecycle Mapping
 
-1. **Reconnaissance & Enumeration:** Connects to the target URL, parses HTML forms using BeautifulSoup, and identifies testable input parameters, such as text and search fields.
-
-2. **Baseline Establishment:** Submits normal form data to establish the application's baseline response behaviour and help reduce false positives.
-
-3. **Vulnerability Probing:** Injects syntax-breaking characters (`'`, `"`, `')`, `")`) into discovered parameters to identify potential SQL injection vulnerabilities.
-
-4. **Analysis & Detection:** Analyses HTTP responses for database error signatures associated with MySQL, MSSQL, and Oracle.
-
-5. **Reporting & Safe Termination:** Displays potential findings in the console and saves timestamped reports locally in the `output/` directory. The scan can also be interrupted using the keyboard interrupt (`Ctrl+C`).
+1. **Reconnaissance & Enumeration:** Connects to the target URL, discovers HTML forms and identifies testable input parameters.
+2. **Baseline Establishment:** Sends normal form data to record the application’s expected response and help reduce false positives.
+3. **Vulnerability Probing:** Tests discovered parameters using SQL injection payloads such as (', ", '), and ").
+4. **Analysis & Detection:** Analyses HTTP responses for database error signatures associated with MySQL, MSSQL, Oracle and Generic SQL errors.
+5. **Reporting & Safe Termination:** Displays potential findings and saves timestamped reports in the local output/ directory. Users can interrupt scanning using Ctrl+C.
 
 ## Installation
 
@@ -160,18 +156,18 @@ python main.py --cookie "PHPSESSID=your_session_id; security=low"
 
 ## Ethical Considerations & Responsible Disclosure
 
-SQLiScanner is developed strictly for academic learning and defensive vulnerability assessment. Several safeguards are implemented to encourage responsible usage:
+SQLiScanner is developed for academic learning and authorised security testing. It includes several safeguards:
 
-- **User Authorization:** Requires users to explicitly confirm that they have permission to test the target system before proceeding.
-- **Target Scope Validation:** Helps prevent testing outside the intended and authorised scope.
-- **Safe Default Target:** Uses localhost as the default target to reduce accidental testing of external systems.
-- **Limited Payloads:** Uses basic SQL syntax-breaking characters to identify potential database error responses without attempting data extraction or destructive exploitation.
-- **Emergency Stop:** Provides a Ctrl+C mechanism to interrupt scanning and preserve partial results when available.
-- **Local Report Storage:** Saves scan results locally in the designated output directory.
+- **User Authorisation:** Requires users to confirm permission before scanning.
+- **Target Scope Validation:** Checks the target against the intended testing scope.
+- **Safe Default Target:** Uses localhost to reduce accidental testing of external systems.
+- **Limited Payloads:** Uses basic SQL syntax-breaking characters without attempting data extraction.
+- **Emergency Stop:** Allows users to interrupt scanning using Ctrl+C.
+- **Local Report Storage:** Saves scan results in the designated output directory.
 
-If a potential vulnerability is discovered during authorised testing, it should be reported privately to the affected system owner or their designated security contact. The report should include the affected URL, input parameter, detected error evidence and recommended remediation, such as implementing parameterised queries or prepared statements.
+Potential vulnerabilities should be reported privately to the affected system owner or designated security contact. Reports should include the affected URL, input parameter, error evidence and recommended remediation, such as using parameterised queries or prepared statements.
 
-Users should avoid accessing, extracting or publicly disclosing sensitive information. Public disclosure should be avoided until the system owner has had a reasonable opportunity to address the vulnerability.
+Users must avoid accessing or extracting sensitive information. Public disclosure should be avoided until the system owner has had a reasonable opportunity to address the vulnerability.
 
 ## Legal Disclaimer
 
