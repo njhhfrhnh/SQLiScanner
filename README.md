@@ -2,9 +2,8 @@
 
 ## Description
 
-SQLiScanner is a Python-based tool that detects potential error-based SQL Injection (SQLi) vulnerabilities in web application forms. It is designed for educational purposes and authorised testing in lab environments such as DVWA.
-
-The scanner discovers HTML forms, tests input parameters with SQL injection payloads, and analyses server responses for database error messages.
+SQLiScanner is a Python-based tool that detects potential error-based SQL Injection (SQLi) vulnerabilities in web application forms.
+The scanner discovers HTML forms, tests input parameters with SQL injection payloads, and analyzes server responses for database error messages.
 
 ## Intended Users
 
@@ -12,13 +11,13 @@ SQLiScanner is intended for:
 
 * Cybersecurity students learning SQL injection detection.
 * Educators demonstrating web application security in controlled lab environments.
-* Developers and junior penetration testers conducting authorised security assessments.
+* Developers and junior penetration testers conducting authorized security assessments.
 
 ## Team Members
 
 This project was collaboratively developed by four students from UniKL MIIT as part of the IKB31603 Ethical Hacking Assignment 1.
 
-GROUP 1 L01-B05
+**GROUP 1 L01-B05**
 | No. | Name | Student ID | Contribution |
 |---|---|---|---|
 | 1 | Muhammad Hafeez bin Mohd Radzi | 52215226085 | Scanner testing, validation, documentation and report preparation. |
@@ -37,9 +36,9 @@ All team members contributed to the development, testing, documentation and eval
 
 1. **Reconnaissance & Enumeration:** Connects to the target URL, discovers HTML forms and identifies testable input parameters.
 2. **Baseline Establishment:** Sends normal form data to record the application’s expected response and help reduce false positives.
-3. **Vulnerability Probing:** Tests discovered parameters using SQL injection payloads such as (', ", '), and ").
-4. **Analysis & Detection:** Analyses HTTP responses for database error signatures associated with MySQL, MSSQL, Oracle and Generic SQL errors.
-5. **Reporting & Safe Termination:** Displays potential findings and saves timestamped reports in the local output/ directory. Users can interrupt scanning using Ctrl+C.
+3. **Vulnerability Probing:** Tests discovered parameters using SQL injection payloads such as `'`, `"`, `')`, and `")`.
+4. **Analysis & Detection:** Analyzes HTTP responses for database error signatures associated with MySQL, MSSQL and Oracle.
+5. **Reporting & Safe Termination:** Displays potential findings and saves timestamped reports in the local `output/` directory. Users can interrupt scanning using `Ctrl+C`.
 
 ## Installation
 
@@ -113,7 +112,7 @@ The following screenshot demonstrates SQLiScanner detecting a potential error-ba
 
 ### 3. Authenticated Scan
 
-Passes session cookies to access pages that require authentication, such as DVWA:
+Use the `--cookie` option to access pages that require authentication, such as DVWA:
 
 ```bash
 python main.py --cookie "PHPSESSID=your_session_id; security=low"
@@ -123,16 +122,16 @@ python main.py --cookie "PHPSESSID=your_session_id; security=low"
 
 ## Rules of Engagement (RoE)
 
-### Authorised Scope
+### Authorized Scope
 
-- Testing is permitted only on localhost, isolated lab environments, or systems with explicit written authorisation.
+- Testing is permitted only on localhost, isolated lab environments, or systems with explicit written authorization.
 - The target hostname must be confirmed before testing begins.
-- Testing outside the authorised scope is strictly prohibited.
+- Testing outside the authorized scope is strictly prohibited.
 
 ### Testing Time Windows
 
 - Testing must be conducted within the time window approved by the system owner.
-- Testing must stop immediately if the authorised testing period expires.
+- Testing must stop immediately if the authorized testing period expires.
 
 ### Permitted Techniques
 
@@ -156,24 +155,24 @@ python main.py --cookie "PHPSESSID=your_session_id; security=low"
 
 ## Ethical Considerations & Responsible Disclosure
 
-SQLiScanner is developed for academic learning and authorised security testing. It includes several safeguards:
+SQLiScanner is developed for academic learning and authorized security testing. It includes several safeguards:
 
-- **User Authorisation:** Requires users to confirm permission before scanning.
+- **User Authorization:** Requires users to confirm permission before scanning.
 - **Target Scope Validation:** Checks the target against the intended testing scope.
 - **Safe Default Target:** Uses localhost to reduce accidental testing of external systems.
 - **Limited Payloads:** Uses basic SQL syntax-breaking characters without attempting data extraction.
 - **Emergency Stop:** Allows users to interrupt scanning using Ctrl+C.
 - **Local Report Storage:** Saves scan results in the designated output directory.
 
-Potential vulnerabilities should be reported privately to the affected system owner or designated security contact. Reports should include the affected URL, input parameter, error evidence and recommended remediation, such as using parameterised queries or prepared statements.
+Potential vulnerabilities should be reported privately to the affected system owner or designated security contact. Reports should include the affected URL, input parameter, error evidence and recommended remediation, such as using parameterized queries or prepared statements.
 
 Users must avoid accessing or extracting sensitive information. Public disclosure should be avoided until the system owner has had a reasonable opportunity to address the vulnerability.
 
 ## Legal Disclaimer
 
-**LEGAL NOTICE:** This tool is intended for educational purposes and authorised security testing only. Unauthorised testing of systems without explicit permission is strictly prohibited and may constitute an offence under the Computer Crimes Act 1997 (Act 563) Malaysia. The developers assume no responsibility or liability for any misuse or damage caused by this software.
+**LEGAL NOTICE:** This tool is intended for educational purposes and authorized security testing only. Unauthorized testing of systems without explicit permission is strictly prohibited and may constitute an offence under the Computer Crimes Act 1997 (Act 563) Malaysia. The developers assume no responsibility or liability for any misuse or damage caused by this software.
 
-By using this tool, users acknowledge that they are responsible for obtaining proper authorisation before conducting security testing.
+By using this tool, users acknowledge that they are responsible for obtaining proper authorization before conducting security testing.
 
 ## Limitations
 
