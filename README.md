@@ -229,8 +229,12 @@ SQLiScanner displays a legal disclaimer referencing the Computer Crimes Act 1997
 
 ![Legal Disclaimer](01-legal-disclaimer.png)
 
+![User Authorization](03-user-authorization.png)
+
 ### 2. SQL Injection Detection
 
-The following screenshot demonstrates SQLiScanner successfully detects a potential error-based SQL injection vulnerability in the DVWA testing environment.
+The following screenshots demonstrate SQLiScanner successfully detects a potential error-based SQL injection vulnerability in the DVWA testing environment.
 
 ![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
+
+![Scan Report](04-scan-report.png)
