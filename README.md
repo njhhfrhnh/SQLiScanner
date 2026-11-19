@@ -78,6 +78,36 @@ All team members contributed to the development, testing, documentation and eval
    pip install -r requirements.txt
    ```
 
+## DVWA Installation and Setup
+SQLiScanner can be tested out locally against **Damn Vulnerable Web Application** using XAMPP.
+
+### 1. Install XAMPP
+1. Download and install **XAMPP** (includes Apache and MariaDB/MySQL) from https://www.apachefriends.org/ .
+2. Open the **XAMPP Control Panel** and start **Apache** and **MySQL**. Both **Apache** and **MySQL** should show a green highlight / running status in the control panel.
+
+### 2. Clone DVWA into `htdocs`
+1. Open a terminal/command prompt in XAMPP’s `htdocs` folder (typically `C:\xampp\htdocs` on Windows).
+2. Clone the official DVWA repository:
+
+   ```bash
+   git clone [https://github.com/digininja/DVWA.git](https://github.com/digininja/DVWA.git)
+   ```
+   
+### 3. Configure DVWA 
+1. Navigate to the folder `config` in the `DVWA` folder.
+2. Copy `config.inc.php.dist` and rename the copy to `config.inc.php`.
+3. Open `config.inc.php` in a text editor and check the database credentials (default XAMPP MySQL user is root with an empty password "", unless you set one): `$_DVWA[ 'db_user' ] = 'root';$_DVWA[ 'db_password' ] = '';`
+
+### 4. Initialize Database and Log In
+1. Open your browser and go to `http://localhost/DVWA/setup.php`
+2. Scroll down and click Create / Reset Database.
+3. Log in on the login page with the default credentials:
+
+    Username: admin
+
+    Password: password
+
+
 ## Usage Examples
 
 ### 1. Display Help Menu
