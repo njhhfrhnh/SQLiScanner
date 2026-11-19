@@ -233,17 +233,18 @@ By using this tool, users acknowledge that they are responsible for obtaining pr
 
 ## Limitations
 
-- **Error-Based Detection Only:** SQLiScanner focuses on detecting visible database error signatures. It does not currently support Boolean-based, Time-based or UNION-based SQL injection detection.
-- **Limited Input Coverage:** The scanner focuses on supported HTML form input parameters and does not comprehensively test JSON payloads, HTTP headers or standalone URL query parameters.
-- **Authentication Dependency:** Authenticated pages require a valid session cookie. An expired or missing cookie may cause the scanner to access a login page instead of the intended application page.
-- **No Rate Limiting:** The current implementation does not provide a configurable request rate-limiting mechanism.
-- **Authorization Verification:** The scanner requires user confirmation but cannot independently verify whether the user has legitimate permission to test the target.
-- **Manual Verification Required:** Detected findings represent potential vulnerabilities and require manual verification to confirm their validity.
+- **Detection Scope:** SQLiScanner currently focuses on error-based SQL Injection detection using configured database error signatures.
+
+- **Input Coverage:** Testing is currently focused on supported HTML form text and search fields.
+
+- **Session Requirements:** Authenticated pages require a valid session cookie to access protected content.
+
+- **Authorization:** Users must confirm that they have permission to test the target. The tool cannot independently verify authorization.
+
+- **Finding Verification:** Detection results indicate potential vulnerabilities and require manual verification.
 
 ## Future Improvements
 
-- Implement Boolean-based and Time-based SQL injection detection.
-- Expand support for additional HTML input types, JSON payloads and standalone URL parameters.
-- Improve detection accuracy and reduce false positives.
-- Introduce configurable request rate limiting.
-- Enhance authentication handling for different web application environments.
+- Extend detection capabilities with Boolean-based and time-based SQL Injection techniques.
+- Expand input support to include URL parameters and JSON-based requests.
+- Introduce configurable request delays and additional scanning options.
