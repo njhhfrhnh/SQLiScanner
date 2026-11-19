@@ -162,21 +162,6 @@ http://127.0.0.1:8080/vulnerabilities/sqli/
 
 **Note:** Replace the placeholder with your own valid cookie values. Session cookies contain authentication credentials. Never share or commit them to GitHub.
 
-## Demonstration
-
-### 1. Legal Disclaimer and Authorization
-
-SQLiScanner displays a legal disclaimer referencing the Computer Crimes Act 1997 (Act 563), Malaysia, and requires users to confirm their authorization before proceeding.
-
-![Legal Disclaimer](01-legal-disclaimer.png)
-
-### 2. SQL Injection Detection
-
-The following screenshot demonstrates SQLiScanner detecting a potential error-based SQL injection vulnerability in the DVWA testing environment.
-
-![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
-
-
 ## Rules of Engagement (RoE)
 
 ### Authorized Scope
@@ -243,8 +228,17 @@ By using this tool, users acknowledge that they are responsible for obtaining pr
 
 - **Finding Verification:** Detection results indicate potential vulnerabilities and require manual verification.
 
-## Future Improvements
 
-- Extend detection capabilities with Boolean-based and time-based SQL Injection techniques.
-- Expand input support to include URL parameters and JSON-based requests.
-- Introduce configurable request delays and additional scanning options.
+## Screenshots/Diagrams
+
+### 1. Legal Disclaimer and Authorization
+
+SQLiScanner displays a legal disclaimer referencing the Computer Crimes Act 1997 (Act 563), Malaysia, and requires users to confirm their authorization before proceeding.
+
+![Legal Disclaimer](01-legal-disclaimer.png)
+
+### 2. SQL Injection Detection
+
+The following screenshot demonstrates SQLiScanner detecting a potential error-based SQL injection vulnerability in the DVWA testing environment.
+
+![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
