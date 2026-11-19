@@ -5,6 +5,9 @@
 SQLiScanner is a Python-based tool that detects potential error-based SQL Injection (SQLi) vulnerabilities in web application forms.
 The scanner discovers HTML forms, tests input parameters with SQL injection payloads, and analyzes server responses for database error messages.
 
+## Video Demonstration
+https://youtu.be/9gdpVQ4KGaY
+
 ## Intended Users
 
 SQLiScanner is intended for:
@@ -158,7 +161,6 @@ http://127.0.0.1:8080/vulnerabilities/sqli/
 ```
 
 **Note:** Replace the placeholder with your own valid cookie values. Session cookies contain authentication credentials. Never share or commit them to GitHub.
-
 
 ## Demonstration
 
