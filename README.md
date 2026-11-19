@@ -8,14 +8,6 @@ The scanner discovers HTML forms, tests input parameters with SQL injection payl
 ## Video Demonstration
 https://youtu.be/9gdpVQ4KGaY
 
-## Intended Users
-
-SQLiScanner is intended for:
-
-* Cybersecurity students learning SQL injection detection.
-* Educators demonstrating web application security in controlled lab environments.
-* Developers and junior penetration testers conducting authorized security assessments.
-
 ## Team Members
 
 This project was collaboratively developed by four students from UniKL MIIT as part of the IKB31603 Ethical Hacking Assignment 1.
@@ -229,7 +221,7 @@ By using this tool, users acknowledge that they are responsible for obtaining pr
 - **Finding Verification:** Detection results indicate potential vulnerabilities and require manual verification.
 
 
-## Screenshots/Diagrams
+## Screenshots
 
 ### 1. Legal Disclaimer and Authorization
 
@@ -239,6 +231,6 @@ SQLiScanner displays a legal disclaimer referencing the Computer Crimes Act 1997
 
 ### 2. SQL Injection Detection
 
-The following screenshot demonstrates SQLiScanner detecting a potential error-based SQL injection vulnerability in the DVWA testing environment.
+The following screenshot demonstrates SQLiScanner successfully detects a potential error-based SQL injection vulnerability in the DVWA testing environment.
 
 ![DVWA SQLi Detection](02-dvwa-sqli-detection.png)
