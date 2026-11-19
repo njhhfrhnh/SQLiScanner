@@ -33,7 +33,7 @@ All team members contributed to the development, testing, documentation and eval
 ## Attack Category
 
 - **Vulnerability Class:** SQL Injection (CWE-89: Improper Neutralization of Special Elements used in an SQL Command)
-- **OWASP Top 10 Mapping:** A03:2021 – Injection
+- **OWASP Top 10 Mapping:** A05:2025 – Injection
 
 ## Attack Lifecycle Mapping
 
