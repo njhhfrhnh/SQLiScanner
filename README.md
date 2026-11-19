@@ -1,4 +1,5 @@
 # SQLiScanner
+**GROUP 1 L01-B05**
 
 ## Description
 
@@ -7,20 +8,6 @@ The scanner discovers HTML forms, tests input parameters with SQL injection payl
 
 ## Video Demonstration
 https://youtu.be/9gdpVQ4KGaY
-
-## Team Members
-
-This project was collaboratively developed by four students from UniKL MIIT as part of the IKB31603 Ethical Hacking Assignment 1.
-
-**GROUP 1 L01-B05**
-| No. | Name | Student ID | Contribution |
-|---|---|---|---|
-| 1 | Muhammad Hafeez bin Mohd Radzi | 52215226085 | Scanner testing, validation, documentation and report preparation. |
-| 2 | Nur Najihah Farhanah binti Hashim | 52215125111 | Core scanner development, SQL injection detection logic, payload implementation, integration and overall testing. |
-| 3 | Izzat 'Irfan bin Azman | 52215124710 | HTML form discovery, input parameter identification, testing and documentation. |
-| 4 | Shahril Iskandar bin Sharizan | 52215125627 | Response analysis, vulnerability verification, testing and report preparation. |
-
-All team members contributed to the development, testing, documentation and evaluation of SQLiScanner.
 
 ## Attack Category
 
